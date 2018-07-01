@@ -10,7 +10,7 @@ class App extends React.Component {
                 // {title: 'Ex Machina'},
                 ],
             currentMovies: [
-            ]
+                ]
         }
     }
     goClick(input) {
@@ -31,8 +31,12 @@ class App extends React.Component {
         if (this.state.currentMovies.length === 0) {
             this.setState({
                 currentMovies: [{title: 'Sorry, no movies matched what you were looking for'}]
-            })            
+            }) 
+            console.log(this.state.currentMovies, 'current movies') 
+            console.log(this.state.movies, 'movies')         
         }
+        document.getElementById('goInput').value= ''
+
     }
     addClick(input) {
         this.state.currentMovies.push({title: input});
@@ -40,6 +44,8 @@ class App extends React.Component {
         this.setState({
             currentMovies: this.state.currentMovies
         })
+        console.log(this.state.currentMovies, 'currentmovies')
+        document.getElementById('addInput').value= ''
     }
     render() {
         return (

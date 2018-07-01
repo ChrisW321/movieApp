@@ -12,7 +12,7 @@ class Search extends React.Component {
         })
         if (event.keyCode === 13) {
             this.props.goClick(this.state.input)
-            // this.setState({input: ''})
+            this.setState({input: ''})
         }
     }
     addInput(event) {
@@ -21,7 +21,7 @@ class Search extends React.Component {
         })
         if (event.keyCode === 13) {
             this.props.addClick(this.state.addInput)
-            // this.setState({addInput: ''})
+            this.setState({addInput: ''})
         }
     }
 
@@ -29,16 +29,22 @@ class Search extends React.Component {
         return (
             <div>
                 <div>
-                    <input type="text"
+                    <input id="addInput" type="text"
                     onKeyUp={(event) => this.addInput(event)} 
                     placeholder="Add movies"/>
-                    <button onClick={() => this.props.addClick(this.state.addInput)} >Add</button>
+                    <button onClick={() => {
+                        this.props.addClick(this.state.addInput)
+                        this.setState({addInput: ''})
+                    }} >Add</button>
                 </div>
                 <div>
-                    <input type="text" 
+                    <input type="text" id="goInput"
                     onKeyUp={(event) => this.handleInput(event)} 
                     placeholder="Search movies"/>
-                    <button onClick={() => this.props.goClick(this.state.input)} >Go!</button>
+                    <button onClick={() => {
+                        this.props.goClick(this.state.input)
+                        this.setState({input: ''})
+                    }} >Go!</button>
                 </div>
             </div>
         )
