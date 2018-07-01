@@ -9,6 +9,9 @@ class Search extends React.Component {
         this.setState({
             input: event.target.value
         })
+        if (event.keyCode === 13) {
+            this.props.goClick(this.state.input)
+        }
     }
 
     render() {
