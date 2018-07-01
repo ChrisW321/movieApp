@@ -9,17 +9,18 @@ class Search extends React.Component {
         this.setState({
             input: event.target.value
         })
-        console.log(this.state.input);
     }
+
     render() {
         return (
             <div>
                 <input type="text" 
                 onKeyUp={(event) => this.handleInput(event)} 
                 placeholder="Search movies"/>
+                <button onClick={() => this.props.goClick(this.state.input)} >Go!</button>
             </div>
         )
     } 
 }
-
+// () => this.handleGoClick()
 window.Search = Search;
