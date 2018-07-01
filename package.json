@@ -1,0 +1,35 @@
+{
+  "name": "movieapp",
+  "version": "1.0.0",
+  "description": "MovieApp",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel . --out-dir compiled --presets=env,react --ignore=node_modules,compiled --source-maps inline --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisW321/movieApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisW321/movieApp/issues"
+  },
+  "homepage": "https://github.com/ChrisW321/movieApp#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "jquery": "^2.2.1",
+    "lodash": "^4.6.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.5.0",
+    "babel-watch": "^2.0.7",
+    "chai": "^3.5.0",
+    "mocha": "2.3.3",
+    "sinon": "1.17.3"
+  }
+}
