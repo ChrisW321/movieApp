@@ -2,7 +2,8 @@ class Search extends React.Component {
     constructor(props) {
         super(props) 
         this.state = {
-            input: ''
+            input: '',
+            addInput: ''
         }
     }
     handleInput(event) {
@@ -11,16 +12,34 @@ class Search extends React.Component {
         })
         if (event.keyCode === 13) {
             this.props.goClick(this.state.input)
+            // this.setState({input: ''})
+        }
+    }
+    addInput(event) {
+        this.setState({
+            addInput: event.target.value
+        })
+        if (event.keyCode === 13) {
+            this.props.addClick(this.state.addInput)
+            // this.setState({addInput: ''})
         }
     }
 
     render() {
         return (
             <div>
-                <input type="text" 
-                onKeyUp={(event) => this.handleInput(event)} 
-                placeholder="Search movies"/>
-                <button onClick={() => this.props.goClick(this.state.input)} >Go!</button>
+                <div>
+                    <input type="text"
+                    onKeyUp={(event) => this.addInput(event)} 
+                    placeholder="Add movies"/>
+                    <button onClick={() => this.props.addClick(this.state.addInput)} >Add</button>
+                </div>
+                <div>
+                    <input type="text" 
+                    onKeyUp={(event) => this.handleInput(event)} 
+                    placeholder="Search movies"/>
+                    <button onClick={() => this.props.goClick(this.state.input)} >Go!</button>
+                </div>
             </div>
         )
     } 

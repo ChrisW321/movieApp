@@ -3,18 +3,13 @@ class App extends React.Component {
         super(props)
         this.state = {
             movies: [
-                {title: 'Mean Girls'},
-                {title: 'Hackers'},
-                {title: 'The Grey'},
-                {title: 'Sunshine'},
-                {title: 'Ex Machina'},
+                // {title: 'Mean Girls'},
+                // {title: 'Hackers'},
+                // {title: 'The Grey'},
+                // {title: 'Sunshine'},
+                // {title: 'Ex Machina'},
                 ],
             currentMovies: [
-                {title: 'Mean Girls'},
-                {title: 'Hackers'},
-                {title: 'The Grey'},
-                {title: 'Sunshine'},
-                {title: 'Ex Machina'},
             ]
         }
     }
@@ -33,11 +28,23 @@ class App extends React.Component {
         this.setState({
             currentMovies: this.state.currentMovies
         })
+        if (this.state.currentMovies.length === 0) {
+            this.setState({
+                currentMovies: [{title: 'Sorry, no movies matched what you were looking for'}]
+            })            
+        }
+    }
+    addClick(input) {
+        this.state.currentMovies.push({title: input});
+        this.state.movies.push({title: input});
+        this.setState({
+            currentMovies: this.state.currentMovies
+        })
     }
     render() {
         return (
             <div>
-                <div><Search movies={this.state.currentMovies} goClick={this.goClick.bind(this)}/></div>
+                <div><Search movies={this.state.currentMovies} goClick={this.goClick.bind(this)} addClick={this.addClick.bind(this)}/></div>
                 <div><MovieList movies={this.state.currentMovies} currentMovies={this.state.currentMovies}/></div>
             </div>
         )
