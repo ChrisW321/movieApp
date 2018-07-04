@@ -32,7 +32,7 @@ class Search extends React.Component {
                     <input id="addInput" type="text"
                     onKeyUp={(event) => this.addInput(event)} 
                     placeholder="Add movies"/>
-                    <button onClick={() => {
+                    <button id="add" onClick={() => {
                         this.props.addClick(this.state.addInput)
                         this.setState({addInput: ''})
                     }} >Add</button>
@@ -41,7 +41,7 @@ class Search extends React.Component {
                     <input type="text" id="goInput"
                     onKeyUp={(event) => this.handleInput(event)} 
                     placeholder="Search movies"/>
-                    <button onClick={() => {
+                    <button id="go" onClick={() => {
                         this.props.goClick(this.state.input)
                         this.setState({input: ''})
                     }} >Go!</button>

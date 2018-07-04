@@ -2,18 +2,16 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            movies: [
-                // {title: 'Mean Girls'},
-                // {title: 'Hackers'},
-                // {title: 'The Grey'},
-                // {title: 'Sunshine'},
-                // {title: 'Ex Machina'},
-                ],
-            currentMovies: [
-                ]
+            movies: [{title: 'test'}],
+            currentMovies: [{title: 'test'}],
+            toWatch: [],
+            watched: [],
+            matches: false,
+            message: ''
         }
     }
     goClick(input) {
+        this.setState({matches: false, message: ''})
         input = input.toLowerCase();
         let lowerCase = [];
         this.state.currentMovies = []
@@ -29,29 +27,46 @@ class App extends React.Component {
             currentMovies: this.state.currentMovies
         })
         if (this.state.currentMovies.length === 0) {
-            this.setState({
-                currentMovies: [{title: 'Sorry, no movies matched what you were looking for'}]
-            }) 
-            console.log(this.state.currentMovies, 'current movies') 
-            console.log(this.state.movies, 'movies')         
+            this.setState({matches: true})
         }
         document.getElementById('goInput').value= ''
 
     }
     addClick(input) {
+        this.setState({matches: false, message: ''})
         this.state.currentMovies.push({title: input});
         this.state.movies.push({title: input});
-        this.setState({
-            currentMovies: this.state.currentMovies
-        })
-        console.log(this.state.currentMovies, 'currentmovies')
+        this.state.toWatch.push({title: input});
+        this.setState({currentMovies: this.state.currentMovies})
         document.getElementById('addInput').value= ''
     }
+    addToWatched(movie) {
+        this.state.watched.push({title: movie});
+        for (let i = 0; i < this.state.toWatch.length; i++) {
+            if (this.state.toWatch[i].title === movie) {
+                this.state.toWatch.splice(i, 1);
+            }
+        }
+        console.log(this.state.watched)
+    }
+    showWatched() {
+        this.setState({currentMovies: this.state.watched})
+        console.log('showWatch')
+    }
+    showToWatch() {
+        this.setState({currentMovies: this.state.toWatch})
+        console.log('showtowatch')
+    }
     render() {
+        if (this.state.matches) {
+            this.state.message = 'Sorry, that search returned 0 results'
+        }
         return (
             <div>
                 <div><Search movies={this.state.currentMovies} goClick={this.goClick.bind(this)} addClick={this.addClick.bind(this)}/></div>
-                <div><MovieList movies={this.state.currentMovies} currentMovies={this.state.currentMovies}/></div>
+                <div><MovieList movies={this.state.currentMovies} currentMovies={this.state.currentMovies} watch={this.addToWatched.bind(this)} 
+                showWatched={this.showWatched.bind(this)} showToWatch={this.showToWatch.bind(this)}/></div>
+                <div>{this.state.message}</div>
             </div>
         )
     }

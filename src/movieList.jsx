@@ -1,8 +1,9 @@
 var MovieList = (props) => {
     return (
         <div>
+            <div><button id="watch" onClick={() => props.showWatched()}>Watch</button><button id="toWatch" onClick={() => props.showToWatch()}>To watch</button></div>
             Movies: {props.movies.map(movie => 
-                <MovieListEntry movie={movie} key={movie.title}/>
+                <MovieListEntry movie={movie} key={movie.title} watch={props.watch}/>
             )}
         </div>
     )

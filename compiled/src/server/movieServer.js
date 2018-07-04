@@ -1,0 +1,21 @@
+'use strict';
+
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+  return res.send('Soon to be movie List');
+});
+
+app.use(express.static('/Users/chris/code/movieApp/movieApp'));
+
+var port = 8000;
+
+// For now, since you're running this server on your local machine,
+// we'll have it listen on the IP address 127.0.0.1, which is a
+// special address that always refers to localhost.
+var ip = '127.0.0.1';
+console.log('Listening on http://' + ip + ':' + port);
+
+app.listen(8000);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy9zZXJ2ZXIvbW92aWVTZXJ2ZXIuanMiXSwibmFtZXMiOlsiZXhwcmVzcyIsInJlcXVpcmUiLCJhcHAiLCJnZXQiLCJyZXEiLCJyZXMiLCJzZW5kIiwidXNlIiwic3RhdGljIiwicG9ydCIsImlwIiwiY29uc29sZSIsImxvZyIsImxpc3RlbiJdLCJtYXBwaW5ncyI6Ijs7QUFBQSxJQUFNQSxVQUFVQyxRQUFRLFNBQVIsQ0FBaEI7QUFDQSxJQUFNQyxNQUFNRixTQUFaOztBQUVBRSxJQUFJQyxHQUFKLENBQVEsR0FBUixFQUFhLFVBQUNDLEdBQUQsRUFBTUMsR0FBTjtBQUFBLFNBQWNBLElBQUlDLElBQUosQ0FBUyx1QkFBVCxDQUFkO0FBQUEsQ0FBYjs7QUFFQUosSUFBSUssR0FBSixDQUFRUCxRQUFRUSxNQUFSLENBQWUscUNBQWYsQ0FBUjs7QUFFQSxJQUFJQyxPQUFPLElBQVg7O0FBRUE7QUFDQTtBQUNBO0FBQ0EsSUFBSUMsS0FBSyxXQUFUO0FBQ0FDLFFBQVFDLEdBQVIsQ0FBWSx5QkFBeUJGLEVBQXpCLEdBQThCLEdBQTlCLEdBQW9DRCxJQUFoRDs7QUFFQVAsSUFBSVcsTUFBSixDQUFXLElBQVgiLCJmaWxlIjoibW92aWVTZXJ2ZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBleHByZXNzID0gcmVxdWlyZSgnZXhwcmVzcycpXG5jb25zdCBhcHAgPSBleHByZXNzKClcblxuYXBwLmdldCgnLycsIChyZXEsIHJlcykgPT4gcmVzLnNlbmQoJ1Nvb24gdG8gYmUgbW92aWUgTGlzdCcpKVxuXG5hcHAudXNlKGV4cHJlc3Muc3RhdGljKCcvVXNlcnMvY2hyaXMvY29kZS9tb3ZpZUFwcC9tb3ZpZUFwcCcpKTtcblxudmFyIHBvcnQgPSA4MDAwO1xuXG4vLyBGb3Igbm93LCBzaW5jZSB5b3UncmUgcnVubmluZyB0aGlzIHNlcnZlciBvbiB5b3VyIGxvY2FsIG1hY2hpbmUsXG4vLyB3ZSdsbCBoYXZlIGl0IGxpc3RlbiBvbiB0aGUgSVAgYWRkcmVzcyAxMjcuMC4wLjEsIHdoaWNoIGlzIGFcbi8vIHNwZWNpYWwgYWRkcmVzcyB0aGF0IGFsd2F5cyByZWZlcnMgdG8gbG9jYWxob3N0LlxudmFyIGlwID0gJzEyNy4wLjAuMSc7XG5jb25zb2xlLmxvZygnTGlzdGVuaW5nIG9uIGh0dHA6Ly8nICsgaXAgKyAnOicgKyBwb3J0KTtcblxuYXBwLmxpc3Rlbig4MDAwKSJdfQ==

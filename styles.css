@@ -1,0 +1,22 @@
+#add, #go {
+    background-color: rgb(115, 175, 115);
+    outline: none;
+}
+#watch:hover, #toWatch:hover {
+    background-color: rgb(115, 175, 115);
+}
+#watch:focus, #toWatch:focus {
+    background-color: rgb(115, 175, 115);   
+    outline: none;
+}
+#watch, #toWatch {
+    padding: 10px 10px 10px 10px;
+}
+#addInput {
+    outline: none;
+    margin: 10px 10px 10px 10px;
+}
+#goInput {
+    outline: none;
+    margin: 10px 10px 10px 10px;    
+}

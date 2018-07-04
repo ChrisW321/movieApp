@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => res.send('Soon to be movie List'))
+
+app.use(express.static('/Users/chris/code/movieApp/movieApp'));
+
 var port = 8000;
 
 // For now, since you're running this server on your local machine,
