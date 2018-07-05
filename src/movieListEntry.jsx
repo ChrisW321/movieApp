@@ -17,9 +17,9 @@ class MovieListEntry extends React.Component {
             this.state.word = 'To watch'
         }
         return (
-            <div>
+            <div id="movieEntry">
                 <ul>
-                    <li>{this.props.movie.title}</li><button onClick={() => this.watchClick()} >{this.state.word}</button>
+                    <li>{this.props.movie.title}<button id="movieWatchButton" onClick={() => this.watchClick()} >{this.state.word}</button></li>
                 </ul>
             </div>
         )

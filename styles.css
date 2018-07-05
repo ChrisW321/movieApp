@@ -11,6 +11,11 @@
 }
 #watch, #toWatch {
     padding: 10px 10px 10px 10px;
+    margin: 0 0 0px 0;
+    border-radius: 3px;
+}
+#watch {
+    margin-left: 10px;
 }
 #addInput {
     outline: none;
@@ -19,4 +24,31 @@
 #goInput {
     outline: none;
     margin: 10px 10px 10px 10px;    
+}
+#title {
+    font-size: 28px;
+    font-family: courier new;
+    font-weight: bold;
+    margin-left: 20px;
+}
+ul {
+    margin: 0 0 0 0;
+    list-style-type: none;
+}
+#movieWatchButton {
+    margin: 10px 10px 10px 100px;
+    background-color: rgb(115, 175, 115);
+    outline: none;  
+    width: 30%;
+    padding: 0 0 0 0;
+    border-radius: 5px;
+}
+#movieEntry {
+    outline-style: solid;
+    width: 50%;
+    outline-width: 1px;
+    margin: 0 100px 0 11px;
+}
+#app {
+    margin: 20px 0 20px 20px;
 }

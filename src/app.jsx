@@ -3,7 +3,7 @@ class App extends React.Component {
         super(props)
         this.state = {
             movies: [{title: 'test'}],
-            currentMovies: [{title: 'test'}],
+            currentMovies: [{title: 'test'}, {title: 'second'}],
             toWatch: [],
             watched: [],
             matches: false,
@@ -63,6 +63,7 @@ class App extends React.Component {
         }
         return (
             <div>
+                <div id="title">Movie List</div>
                 <div><Search movies={this.state.currentMovies} goClick={this.goClick.bind(this)} addClick={this.addClick.bind(this)}/></div>
                 <div><MovieList movies={this.state.currentMovies} currentMovies={this.state.currentMovies} watch={this.addToWatched.bind(this)} 
                 showWatched={this.showWatched.bind(this)} showToWatch={this.showToWatch.bind(this)}/></div>
