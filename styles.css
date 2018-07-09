@@ -36,7 +36,7 @@ ul {
     list-style-type: none;
 }
 #movieWatchButton {
-    margin: 10px 10px 10px 100px;
+    margin: 10px 10px 10px 10px;
     background-color: rgb(115, 175, 115);
     outline: none;  
     width: 30%;
@@ -48,6 +48,9 @@ ul {
     width: 75%;
     outline-width: 1px;
     margin: 0 100px 0 11px;
+}
+#movieEntry:hover {
+    background-color: aquamarine;
 }
 #app {
     margin: 20px 0 20px 20px;

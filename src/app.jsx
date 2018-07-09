@@ -3,7 +3,7 @@ class App extends React.Component {
         super(props)
         this.state = {
             movies: [{title: 'test'}],
-            currentMovies: [{title: 'test'}, {title: 'second'}],
+            currentMovies: [{title: 'test', vote_average: 5.5}, {title: 'second', vote_average: 6.7}],
             toWatch: [],
             watched: [],
             matches: false,
