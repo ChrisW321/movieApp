@@ -1,6 +1,6 @@
 const express = require('express')
 var mysql = require('mysql');
-// const controller = require('./dbServer.js')
+const controller = require('./dbServer.js')
 const app = express()
 
 var parser = require('body-parser');
