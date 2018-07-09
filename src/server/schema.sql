@@ -7,4 +7,4 @@ CREATE TABLE movies (
   title text NOT NULL
 );
 
-INSERT INTO movies(title) values ('test sql title')
+INSERT INTO movies(title) values ('test sql title');

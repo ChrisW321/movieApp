@@ -1,11 +1,11 @@
-// var mysql = require('mysql');
+var mysql = require('mysql');
 
-// var connection = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: '',
-//     database: 'movies'
-// })
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'movies'
+})
 // connection.connect();
 
 // var MongoClient = require('mongodb').MongoClient
@@ -22,6 +22,7 @@
 // });
 
 var postUserAddedMovie = (input) => {
+    console.log('post user movie called')
     connection.query(`INSERT INTO movies(title) values (${input})`, (err, result) => {
         console.log('inserted');
     });
@@ -29,3 +30,4 @@ var postUserAddedMovie = (input) => {
  
 // module.exports.connection = connection;
 module.exports.postUserAddedMovie = postUserAddedMovie;
+module.exports.connection = connection;
