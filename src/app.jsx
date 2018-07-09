@@ -7,11 +7,17 @@ class App extends React.Component {
             toWatch: [],
             watched: [],
             matches: false,
-            message: ''
+            message: '',
+            movieData: {'testsearch': 'testsearch'}
         }
     }
+    componentDidMount() {
+        searchMovie('adventure', (data) => this.setState({currentMovies: data.results, movies: data.results}) );
+    }
     goClick(input) {
+        searchMovie(input, (data) => this.setState({currentMovies: data.results, movies: data.results}) )
         this.setState({matches: false, message: ''})
+        console.log(this.state.movieData);
         input = input.toLowerCase();
         let lowerCase = [];
         this.state.currentMovies = []
@@ -23,14 +29,11 @@ class App extends React.Component {
                 this.state.currentMovies.push( this.state.movies[i] )
             }
         }
-        this.setState({
-            currentMovies: this.state.currentMovies
-        })
+        this.setState({currentMovies: this.state.currentMovies})
         if (this.state.currentMovies.length === 0) {
             this.setState({matches: true})
         }
         document.getElementById('goInput').value= ''
-
     }
     addClick(input) {
         this.setState({matches: false, message: ''})
@@ -38,7 +41,9 @@ class App extends React.Component {
         this.state.movies.push({title: input});
         this.state.toWatch.push({title: input});
         this.setState({currentMovies: this.state.currentMovies})
-        document.getElementById('addInput').value= ''
+        postMovie(input);
+
+        document.getElementById('addInput').value = ''
     }
     addToWatched(movie) {
         this.state.watched.push({title: movie});
