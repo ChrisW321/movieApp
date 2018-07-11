@@ -6,6 +6,12 @@ const app = express()
 var parser = require('body-parser');
 
 // app.get('/', (req, res) => res.send())
+app.get('/api/movies', function(req, res) {
+    controller.getStoredMovies((err, data) => {
+        console.log(data, 'data at app.get');
+        res.send(data)
+    })
+});
 
 
 app.use(express.static('/Users/chris/code/movieApp/movieApp'));
@@ -13,15 +19,12 @@ app.use(express.static('/Users/chris/code/movieApp/movieApp'));
 var port = 8000;
 app.set('port', port);
 
-app.use(parser.json());
 
-app.get('/', function(req, res) {
-    console.log('getted');
-    res.end('GOT')
-})
+app.use(parser.json());
 
 app.post('/', function(req, res) {
     console.log(req.body);
+    controller.postUserAddedMovie(req.body);
     res.send('posted');
 });
 

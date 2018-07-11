@@ -12,7 +12,7 @@ class App extends React.Component {
         }
     }
     componentDidMount() {
-        searchMovie('adventure', (data) => this.setState({currentMovies: data.results, movies: data.results}) );
+        searchMovie('adventure', (data) => this.setState({currentMovies: data, movies: data}) );
     }
     goClick(input) {
         searchMovie(input, (data) => this.setState({currentMovies: data.results, movies: data.results}) )
